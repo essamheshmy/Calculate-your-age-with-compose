@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.essamhshmey.question'
+    namespace 'com.essamheshmy.CalculateAge'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.essamhshmey.question"
+        applicationId "com.essamheshmy.CalculateAge"
         minSdk 26
         targetSdk 33
         versionCode 1
