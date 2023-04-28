@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
+import com.essamheshmy.CalculateAge.R
 import com.essamhshmey.question.viewmodel.CalculateAgeViewModel
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
     lateinit var textViewAge:TextView
@@ -30,10 +33,21 @@ class MainActivity : AppCompatActivity() {
         buttonCalculateAge.setOnClickListener{
             val name=editTextName.text.toString()
             val age:Int=editTextAge.text.toString().toInt()
-            calculateAgeViewmodel.calculiteAge(name,age).observe( this,
-                {person ->
-                textViewAge.text="${person.age.toString()}"
-            })
+            if (age==null){
+                Toast.makeText(this,"ادخل تاريخ ميلادك لو سمحة",Toast.LENGTH_LONG).show()
+            }else if (age==0){
+                Toast.makeText(this,"لا يمكن ان يكون هذا تاريخ ميلادك لنه لا يعقل ان يكون عمراك ${Calendar.getInstance().get(Calendar.YEAR)} عام",Toast.LENGTH_LONG).show()
+            }else if (age<0){
+                Toast.makeText(this,"ادخل تاريخ ميلاد بعد الميلاد لو سمحة",Toast.LENGTH_LONG).show()
+            }else if (age>Calendar.getInstance().get(Calendar.YEAR)){
+                Toast.makeText(this,"هذا التريخ لم ياتي بعد ",Toast.LENGTH_LONG).show()
+            }else{
+                calculateAgeViewmodel.calculiteAge(name,age).observe( this,
+                    {person ->
+                        textViewAge.text="${person.age}"
+                    })
+            }
+
 
 
         }
