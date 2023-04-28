@@ -12,9 +12,10 @@ abstract class PersonDatabase: RoomDatabase(){
     abstract fun personDAO():PersonDAO
     companion object{
 
-        @Volatile private var instance:PersonDatabase? = null
+        @Volatile
+        private var instance:PersonDatabase? = null
         fun getInstance(context: Context):PersonDatabase {
-            return instance ?: synchronized(this) {
+            return instance ?: synchronized(Any()) {
                 instance ?: buildDatabase(context)
                     .also {
                         instance = it

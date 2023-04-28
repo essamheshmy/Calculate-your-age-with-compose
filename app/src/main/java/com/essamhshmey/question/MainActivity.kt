@@ -1,7 +1,10 @@
 package com.essamhshmey.question
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -10,7 +13,9 @@ import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
+import androidx.room.Room
 import com.essamheshmy.CalculateAge.R
+import com.essamhshmey.question.model.local.PersonDatabase
 import com.essamhshmey.question.viewmodel.CalculateAgeViewModel
 import java.util.Calendar
 
@@ -29,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         editTextName=findViewById(R.id.editTextText)
         editTextAge=findViewById(R.id.editTextText2)
         buttonCalculateAge=findViewById(R.id.button)
-
         buttonCalculateAge.setOnClickListener{
             val name=editTextName.text.toString()
             val age:Int=editTextAge.text.toString().toInt()
@@ -52,5 +56,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
+        return super.onCreateView(name, context, attrs)
+        var  db=PersonDatabase.getInstance(this.applicationContext)
     }
 }
