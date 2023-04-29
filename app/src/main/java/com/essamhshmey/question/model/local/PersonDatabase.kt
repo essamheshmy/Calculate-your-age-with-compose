@@ -1,34 +1,15 @@
 package com.essamhshmey.question.model.local
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.essamhshmey.question.model.entity.Person
 
 
-@Database(entities = [Person::class], version =1, exportSchema = false)
+@Database(entities = [Person::class], version =1)
 abstract class PersonDatabase: RoomDatabase(){
-    abstract fun personDAO():PersonDAO
-    companion object{
+    abstract fun personDao():PersonDao
 
-        @Volatile
-        private var instance:PersonDatabase? = null
-        fun getInstance(context: Context):PersonDatabase {
-            return instance ?: synchronized(Any()) {
-                instance ?: buildDatabase(context)
-                    .also {
-                        instance = it
-                    }
-            }
-        }
-        private fun buildDatabase(context: Context):PersonDatabase {
-            return Room.databaseBuilder(
-                context,
-                PersonDatabase::class.java,
-                "Person_db")
-                .build()
-        }
-    }
+
+
 
 }

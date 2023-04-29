@@ -1,54 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginHorizontal="8dp"
-    android:gravity="bottom">
+   >
 
-    <TextView
-        android:id="@+id/ageTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="50dp"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginBottom="150dp"
- />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editTextText"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple_500"
-        android:fadingEdge="horizontal"
-        android:inputType="text"
-        android:outlineProvider="paddedBounds"
-        android:hint="name" />
-
-    <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="80dp"
-        android:ems="10"
-        android:inputType="number"
-        android:backgroundTint="@color/purple_200"
-        android:hint="age"/>
-
-    <Button
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginBottom="200dp"
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text=" calculate Age"
- />
-
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation" />
 </LinearLayout>
