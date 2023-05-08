@@ -29,22 +29,6 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mNavController=findNavController()
-        binding.calculateAgeButton.setOnClickListener{
-            val name=binding.ageEditText.text.toString()
-            val age:Int=binding.ageEditText.text.toString().toInt()
-            if (age !== null){
-                calculateAgeViewmodel.calculiteAge(name,age).observe( this
-                ) { person ->
-                    binding.ageTextView.text = "${person.age}"
-                    GlobalScope.launch {
-                        // db.personDao().addPerson(Person(0,"essam",2004))
-                    }
-                }
-
-
-            }
-
-        }
     }
 
     override fun onCreateView(
@@ -59,5 +43,20 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.calculateAgeButton.setOnClickListener{
+            val name="kk"//binding.ageEditText.editText.toString()
+            val age:String=binding.ageEditText.text.toString()
+            if (age !== null){
+                calculateAgeViewmodel.calculiteAge(name,age).observe( requireActivity()
+                ) { person ->
+                    binding.ageTextView.text = "yourage:${person.age}"
+                    GlobalScope.launch {
+                        // db.personDao().addPerson(Person(0,"essam",2004))
+                    }
+                }
+
+
+            }
+        }
     }
 }

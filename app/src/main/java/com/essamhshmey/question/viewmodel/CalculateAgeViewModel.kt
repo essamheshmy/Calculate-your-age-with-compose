@@ -8,7 +8,7 @@ import com.essamhshmey.question.repository.CalculateAgeRepositoryImpl
 
 class CalculateAgeViewModel:ViewModel() {
     val calculateAgeRepository: CalculateAgeRepository = CalculateAgeRepositoryImpl()
-    fun calculiteAge(name:String, age: Int): MutableLiveData<Person> {
+    fun calculiteAge(name:String, age: String): MutableLiveData<Person> {
         val personMutableLiveData=calculateAgeRepository.calculateYourAge(name,age)
         return personMutableLiveData
     }

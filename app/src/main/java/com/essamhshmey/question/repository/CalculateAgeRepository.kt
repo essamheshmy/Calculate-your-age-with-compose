@@ -4,5 +4,5 @@ import androidx.lifecycle.MutableLiveData
 import com.essamhshmey.question.model.entity.Person
 
 interface CalculateAgeRepository {
-  fun calculateYourAge(name: String, age: Int): MutableLiveData<Person>
+  fun calculateYourAge(name: String, age: String): MutableLiveData<Person>
 }
