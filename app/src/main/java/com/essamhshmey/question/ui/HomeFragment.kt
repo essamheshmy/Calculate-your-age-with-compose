@@ -45,8 +45,9 @@ class HomeFragment : Fragment() {
 
         binding.calculateAgeButton.setOnClickListener{
             val name="kk"//binding.ageEditText.editText.toString()
-            val age:String=binding.ageEditText.text.toString()
-            if (age !== null){
+
+            var age:String=binding.ageEditText.text.toString()
+            if (age.toInt() !==0){
                 calculateAgeViewmodel.calculiteAge(name,age).observe( requireActivity()
                 ) { person ->
                     binding.ageTextView.text = "yourage:${person.age}"
@@ -56,7 +57,10 @@ class HomeFragment : Fragment() {
                 }
 
 
+            }else{
+                binding.ageTextView.text = "yourage:${ Calendar.getInstance().get(Calendar.YEAR)}"
             }
+
         }
     }
 }

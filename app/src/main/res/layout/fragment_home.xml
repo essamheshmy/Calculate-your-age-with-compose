@@ -63,6 +63,7 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="20dp"
                 android:inputType="number"
+                android:text="0"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
