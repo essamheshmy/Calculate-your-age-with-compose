@@ -1,6 +1,10 @@
 # Calculate-your-age-with-MVVM
+Calculate your age is a simple application from a unit screen that contains a button and two text inputs, a unit for the name and a unit for age
+This is not a real application where I use things that I do not need to use except for individual holidays
+Such as storing the ages of users, using the sold principle, using Java, or even using units of measurement, as this is a small application and will not be developed later.
 # 𝑻𝒐𝒐𝒍𝒔
 - **Kotlin**
+- **Java**
 - **Coroutines**
 - **ViewModel**
 - **Navigation component**
