@@ -10,6 +10,7 @@ class CalculateAgeRepositoryImpl: CalculateAgeRepository {
         val currentYear = Calendar.getInstance().get(Calendar.YEAR)
         val yourAge= currentYear - age.toInt()
         val person= Person(name,yourAge)
+        //val person= Person.Builder().Name(name).Age(yourAge)
         infoMutablLiveData.postValue(person)
         return infoMutablLiveData
     }
