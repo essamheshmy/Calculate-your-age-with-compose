@@ -29,6 +29,7 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mNavController=findNavController()
+
     }
 
     override fun onCreateView(
