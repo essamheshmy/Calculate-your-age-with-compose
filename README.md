@@ -1,7 +1,7 @@
 # Calculate-your-age-with-MVVM
-Calculate your age is a simple application for calculating age from one screen that contains a button, two text entries, a name unit and an age unit where you give it the name and the year of miles and the age comes out for you
-But with the use of the principles of Solid and some of the libraries of Jet Pack and the addition of everything that can be added as a matter of experimentation, as this is an application that is not complicated, so it is easy to understand these principles
-In the future I will try to add some units of measurement and added some other Jetpack libraries
+Calculate your age is a simple application from a unit screen that contains a button and two text inputs, a unit for the name and a unit for age
+This is not a real application where I use things that I do not need to use except for individual holidays
+Such as storing the ages of users, using the sold principle, using Java, or even using units of measurement, as this is a small application and will not be developed later.
 # 𝑻𝒐𝒐𝒍𝒔
 - **Kotlin**
 - **Java**

@@ -1,4 +1,4 @@
-package com.essamhshmey.question
+package com.essamheshmy.calculate_your_age_with_mvvm
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.essamhshmey.question", appContext.packageName)
+        assertEquals("com.essamheshmy.calculate_your_age_with_mvvm", appContext.packageName)
     }
 }
