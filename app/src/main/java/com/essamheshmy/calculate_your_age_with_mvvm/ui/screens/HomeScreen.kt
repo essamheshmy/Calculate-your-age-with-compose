@@ -43,12 +43,9 @@ import com.essamheshmy.calculate_your_age_with_mvvm.viewmodel.CalculateAgeViewMo
 @Composable
 fun homeScreen(){
     var viewModel:CalculateAgeViewModel= viewModel()
-
     var name by rememberSaveable { mutableStateOf("") }
     var age by rememberSaveable { mutableStateOf(0) }
     var namet by rememberSaveable { mutableStateOf("name") }
-
-    var person=Person("name",20)
     var aget by rememberSaveable { mutableStateOf(0) }
 
     Column(modifier = Modifier
@@ -95,13 +92,10 @@ fun homeScreen(){
 
             Button(
                 onClick = {
-              //viewModel.calculiteAge2("name,age",20)
-                   // name=person.name.toString()
-                   //person.name.toString()
-                  //  person.age!!
+                    var person=viewModel.calculiteAge2("essam",2004)
+                    namet= person.name.toString()
+                    aget= person.age!!
 
-                    aget=age
-                    namet=name
                 },
                 modifier= Modifier
                     .fillMaxWidth()
