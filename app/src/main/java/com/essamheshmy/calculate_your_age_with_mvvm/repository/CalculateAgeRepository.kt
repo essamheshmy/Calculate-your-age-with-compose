@@ -5,5 +5,5 @@ import com.essamheshmy.calculate_your_age_with_mvvm.model.entity.Person
 
 
 interface CalculateAgeRepository {
-    fun calculateYourAge(name: String, age: Int): MutableLiveData<Person>
+    fun calculateYourAge(name: String, age: Int):Person
 }

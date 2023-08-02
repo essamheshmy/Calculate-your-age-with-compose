@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -25,6 +27,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -57,12 +60,12 @@ fun homeScreen(){
         ) {
 
             Text(
-                text = "Your $namet",
+                text = "Your name:$namet",
                 fontSize = 30.sp,
                 fontStyle = androidx.compose.ui.text.font.FontStyle(FontStyle.FONT_WEIGHT_BOLD)
             )
             Text(
-                text = "Your $aget",
+                text = "Your age:$aget",
                 fontSize = 30.sp,
                 fontStyle = androidx.compose.ui.text.font.FontStyle(FontStyle.FONT_WEIGHT_BOLD)
             )
@@ -78,7 +81,9 @@ fun homeScreen(){
                 modifier=Modifier.fillMaxWidth(),
                 value = name,
                 onValueChange ={name=it},
-                label = { Text(text = "enter your name")}
+                label = { Text(text = "enter your name")},
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+
             )
 
             OutlinedTextField(
@@ -87,12 +92,13 @@ fun homeScreen(){
                     .fillMaxWidth(),
                 value = age.toString(),
                 onValueChange ={age=it.toInt()},
-                label = { Text(text = "enter your name")}
+                label = { Text(text = "enter your age")},
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
             )
 
             Button(
                 onClick = {
-                    var person=viewModel.calculiteAge2("essam",2004)
+                    var person=viewModel.calculiteAge(name,age)
                     namet= person.name.toString()
                     aget= person.age!!
 
@@ -102,7 +108,7 @@ fun homeScreen(){
                     .height(54.dp),
                 shape = RoundedCornerShape(10.dp)
             )
-            { Text(text = "Button with gray background",color = Color.White) }
+            { Text(text = "CalculateAge",color = Color.White) }
 
         }
 
