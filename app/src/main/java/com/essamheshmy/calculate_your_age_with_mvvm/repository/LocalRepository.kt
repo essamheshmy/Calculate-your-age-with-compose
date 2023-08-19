@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.essamheshmy.calculate_your_age_with_mvvm.model.entity.Person
 
 interface LocalRepository {
+
    suspend fun addPerson(person: Person)
    suspend fun getAllPerson(): MutableLiveData<Person>
    suspend fun getItemStream(name: String): Person

@@ -5,19 +5,15 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,24 +27,20 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.essamheshmy.calculate_your_age_with_mvvm.model.entity.Person
-import com.essamheshmy.calculate_your_age_with_mvvm.model.local.PersonDao
-import com.essamheshmy.calculate_your_age_with_mvvm.repository.LocalRepository
-import com.essamheshmy.calculate_your_age_with_mvvm.repository.LocalRepositoryImpl
-import com.essamheshmy.calculate_your_age_with_mvvm.ui.theme.btnModifier
-import com.essamheshmy.calculate_your_age_with_mvvm.ui.theme.textStyle
 import com.essamheshmy.calculate_your_age_with_mvvm.viewmodel.CalculateAgeViewModel
+import com.essamheshmy.calculate_your_age_with_mvvm.viewmodel.LocalViewModel
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 @RequiresApi(Build.VERSION_CODES.Q)
-@OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
 fun homeScreen(){
+
     var viewModel:CalculateAgeViewModel= viewModel()
+    var localViewModel:LocalViewModel= viewModel()
     var name by rememberSaveable { mutableStateOf("") }
     var age by rememberSaveable { mutableStateOf(0) }
     var namet by rememberSaveable { mutableStateOf("name") }
@@ -101,7 +93,9 @@ fun homeScreen(){
 
             Button(
                 onClick = {
-
+                    GlobalScope.launch {
+                        localViewModel.db.addPerson(Person("essam",2004))
+                    }
 
                     var person=viewModel.calculiteAge(name,age)
                     namet= person.name.toString()
