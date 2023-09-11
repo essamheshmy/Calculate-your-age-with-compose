@@ -14,6 +14,6 @@ Such as storing the ages of users, using the sold principle, using Java, or even
 This app uses **MVVM (Model View View-Model)** architecture.
  
 ## Preview
-![image](https://github.com/essamheshmy/Calculate-your-age-with-MVVM/assets/110932669/4d47c030-93cc-4342-89df-a4d3b9680a14)
+![Screenshot_20230911_162113](https://github.com/essamheshmy/Calculate-your-age-with-compose/assets/110932669/d979979e-0d67-4cfe-b0b2-e16b474574fa)
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/essamheshmy/)
