@@ -43,8 +43,6 @@ fun homeScreen(){
     var localViewModel:LocalViewModel= viewModel()
     var name by rememberSaveable { mutableStateOf("") }
     var age by rememberSaveable { mutableStateOf(0) }
-    var namet by rememberSaveable { mutableStateOf("name") }
-    var aget by rememberSaveable { mutableStateOf(0) }
 
     Column(modifier = Modifier
         .fillMaxSize()
@@ -55,12 +53,12 @@ fun homeScreen(){
         ) {
 
             Text(
-                text = "Your name:$namet",
+                text = "Your name:$name",
                 fontSize = 30.sp,
                 fontStyle = androidx.compose.ui.text.font.FontStyle(FontStyle.FONT_WEIGHT_BOLD)
             )
             Text(
-                text = "Your age:$aget",
+                text = "Your age:$age",
                 fontSize = 30.sp,
                 fontStyle = androidx.compose.ui.text.font.FontStyle(FontStyle.FONT_WEIGHT_BOLD)
             )
@@ -93,13 +91,11 @@ fun homeScreen(){
 
             Button(
                 onClick = {
-                    GlobalScope.launch {
-                        localViewModel.db.addPerson(Person("essam",2004))
-                    }
+                 //   GlobalScope.launch { localViewModel.db.addPerson(Person("essam",2004)) }
 
                     var person=viewModel.calculiteAge(name,age)
-                    namet= person.name.toString()
-                    aget= person.age!!
+                    name= person.name.toString()
+                    age= person.age!!
 
                 },
                 modifier= Modifier

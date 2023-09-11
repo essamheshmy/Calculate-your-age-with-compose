@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Calculate-your-age-with-MVVM"
 include ':app'
+include ':data'
+include ':domen'
