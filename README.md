@@ -3,6 +3,7 @@ Calculate your age is a simple application from a unit screen that contains a bu
 This is not a real application where I use things that I do not need to use except for individual holidays
 Such as storing the ages of users, using the sold principle, using Java, or even using units of measurement, as this is a small application and will not be developed later.
 # 𝑻𝒐𝒐𝒍𝒔
+-**onion architecture**
 - **Kotlin**
 - **Java**
 - **Coroutines**
