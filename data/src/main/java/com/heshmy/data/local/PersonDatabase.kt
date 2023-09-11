@@ -1,4 +1,4 @@
-package com.essamheshmy.calculate_your_age_with_mvvm.model.local
+package com.heshmy.data.local
 
 import android.content.Context
 import androidx.room.Database
@@ -13,7 +13,7 @@ abstract class PersonDatabase:RoomDatabase(){
         @Volatile
         private var Instance: PersonDatabase? = null
 
-        fun getDatabase(context: Context): PersonDatabase{
+        fun getDatabase(context: Context): PersonDatabase {
             return Instance ?: synchronized(this) {
                 Room.databaseBuilder(context, PersonDatabase::class.java, "person_database")
                     .fallbackToDestructiveMigration().build().also { Instance = it }

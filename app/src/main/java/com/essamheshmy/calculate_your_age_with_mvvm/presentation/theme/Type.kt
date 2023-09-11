@@ -1,4 +1,4 @@
-package com.essamheshmy.calculate_your_age_with_mvvm.ui.theme
+package com.essamheshmy.calculate_your_age_with_mvvm.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

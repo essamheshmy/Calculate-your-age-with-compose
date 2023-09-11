@@ -1,4 +1,4 @@
-package com.essamheshmy.calculate_your_age_with_mvvm.model.entity
+package com.heshmy.domen.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
