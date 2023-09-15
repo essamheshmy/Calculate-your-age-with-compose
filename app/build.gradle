@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.essamheshmy.calculate_your_age_with_mvvm"
-        minSdk 24
+        minSdk 26
         targetSdk 34
         versionCode 1
         versionName "1.0"

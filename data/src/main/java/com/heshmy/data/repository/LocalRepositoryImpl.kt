@@ -1,9 +1,9 @@
 package com.heshmy.data.repository
 
 import androidx.lifecycle.MutableLiveData
-import com.essamheshmy.calculate_your_age_with_mvvm.model.entity.Person
 import com.heshmy.data.local.PersonDao
 import com.heshmy.data.local.PersonDatabase
+import com.heshmy.domen.entity.Person
 
 class LocalRepositoryImpl(private val personDao: com.heshmy.data.local.PersonDao): LocalRepository {
 

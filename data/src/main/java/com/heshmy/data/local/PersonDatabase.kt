@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.essamheshmy.calculate_your_age_with_mvvm.model.entity.Person
+import com.heshmy.domen.entity.Person
 
 @Database(entities = [Person::class], version = 1, exportSchema = false)
 abstract class PersonDatabase:RoomDatabase(){

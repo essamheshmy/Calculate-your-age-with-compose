@@ -6,7 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.essamheshmy.calculate_your_age_with_mvvm.model.entity.Person
+import com.heshmy.domen.entity.Person
 
 @Dao
 interface PersonDao {

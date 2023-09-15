@@ -1,4 +1,4 @@
-package com.essamheshmy.calculate_your_age_with_mvvm.presentation.Home_screen
+package com.essamheshmy.calculate_your_age_with_mvvm.presentation.scrins.Home_screen
 
 import android.graphics.fonts.FontStyle
 import android.os.Build
@@ -33,9 +33,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 @Composable
 fun homeScreen(){
 
-    var viewModel: CalculateAgeViewModel = viewModel()
-    var localViewModel:LocalViewModel= viewModel()
-    var name by rememberSaveable { mutableStateOf("") }
+    var viewModel: PersonViewModel = viewModel()
+    //var localViewModel:LocalViewModel= viewModel()
+    var name by rememberSaveable { mutableStateOf("essam_heshmy.test") }
     var age by rememberSaveable { mutableStateOf(0) }
 
     Column(modifier = Modifier
