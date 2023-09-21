@@ -27,15 +27,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.essamheshmy.calculate_your_age_with_mvvm.CalculateApplication
+import com.heshmy.data.local.PersonDatabase
 
 @RequiresApi(Build.VERSION_CODES.Q)
-@Preview
+@Preview()
 @Composable
 fun homeScreen(){
 
     var viewModel: PersonViewModel = viewModel()
     //var localViewModel:LocalViewModel= viewModel()
-    var name by rememberSaveable { mutableStateOf("essam_heshmy.test") }
+    var name by rememberSaveable { mutableStateOf("") }
     var age by rememberSaveable { mutableStateOf(0) }
 
     Column(modifier = Modifier

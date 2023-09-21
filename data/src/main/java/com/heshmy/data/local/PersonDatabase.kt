@@ -12,12 +12,29 @@ abstract class PersonDatabase:RoomDatabase(){
     companion object {
         @Volatile
         private var Instance: PersonDatabase? = null
+        private var daoInstant:PersonDao? =null
+        fun buildDatabase(context: Context): PersonDatabase {
 
-        fun getDatabase(context: Context): PersonDatabase {
             return Instance ?: synchronized(this) {
-                Room.databaseBuilder(context, PersonDatabase::class.java, "person_database")
-                    .fallbackToDestructiveMigration().build().also { Instance = it }
+                Room.databaseBuilder(
+                    context.applicationContext,
+                    PersonDatabase::class.java,
+                    "person_database")
+                    .fallbackToDestructiveMigration()
+                    .build()
+                    .also {
+                        Instance = it
+                    }
             }
         }
+
+
+    fun getDaoInstance(context: Context):PersonDao{
+        synchronized(this){
+        if (daoInstant==null){
+            daoInstant = buildDatabase(context).personDao()
+        }
+        return daoInstant as PersonDao }
     }
+}
 }
